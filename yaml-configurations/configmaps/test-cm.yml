@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-config-map
+data:
+  NAME: saim
+  ORG: al-nafi
+  COURSE: ckad
