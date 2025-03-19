@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ambassador-webserver
+  labels:
+    app: ambassador-webserver
+
+spec:
+  containers:
+  - name: nginx
+    image: nginx:stable
+    ports:
+    - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ambassador-service
+spec:
+  selector:
+    app: ambassador-pod
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: default
+  creationTimestamp: null
+  labels:
+    run: test-pod
+  name: test-pod-1
+spec:
+  containers:
+  - image: redis
+    name: test-pod-container
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

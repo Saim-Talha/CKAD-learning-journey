@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    tier: backend
+    bu: finance 
+  name: test-deployment
+  annotations:
+    author_name: saim
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      bu: finance 
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        bu: finance
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
